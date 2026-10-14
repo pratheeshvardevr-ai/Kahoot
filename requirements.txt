@@ -1,0 +1,5 @@
+streamlit
+streamlit-option-menu
+crewai
+duckduckgo-search
+litellm
