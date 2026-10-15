@@ -94,7 +94,7 @@ def parse_quiz_questions(raw_text):
 
 # ---------------- CREATE TAB ----------------
 if selected == "create":
-    st.title("🏗️ Create Game")
+    st.title("🏗️ Create Quiz")
     st.write("Generate a batch of 10 interactive quiz questions instantly using Groq!")
 
     ques_type = st.text_input("Enter question type (e.g., Science Trivia, History):", value="Science Trivia")
@@ -159,7 +159,7 @@ if selected == "create":
 
 # ---------------- PLAY TAB ----------------
 elif selected == "play":
-    st.title("🎮 Play Game")
+    st.title("🎮 Play Quiz")
     
     if "quiz_batches" not in st.session_state or not st.session_state["quiz_batches"]:
         st.warning("No quiz questions generated yet! Go to the **Create** tab and generate some questions first.")
