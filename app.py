@@ -17,6 +17,23 @@ try:
 except Exception:
     pass
 # ----------------------------------------------------
+import base64
+
+def play_browser_audio(file_path):
+    """Plays an MP3 file directly in the user's browser using HTML5 audio."""
+    try:
+        with open(file_path, "rb") as f:
+            data = f.read()
+        b64 = base64.b64encode(data).decode()
+        audio_html = f"""
+            <audio autoplay="true">
+                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+        """
+        st.markdown(audio_html, unsafe_allow_html=True)
+    except Exception:
+        # Fails silently if the mp3 file is missing from the repo
+        pass
 
 from crewai import Agent, Task, Crew, Process, LLM
 
@@ -198,9 +215,9 @@ elif selected == "play":
                 elif chosen_letter == q_data["answer"]:
                     st.success(f"🎉 Correct! Option {chosen_letter} is right.")
                     st.balloons()
-                    playsound("ttsmaker-file-2026-10-15-8-50-2.mp3")
+                    play_browser_audio("ttsmaker-file-2026-10-15-8-50-2.mp3")
                 else:
                     st.error(f"❌ Incorrect. The correct answer was option {q_data['answer']}.")
-                    playsound("ttsmaker-file-2026-10-15-9-2-15.mp3")
+                    play_browser_audio("ttsmaker-file-2026-10-15-9-2-15.mp3")
             
             st.markdown("---")
