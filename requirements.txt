@@ -3,4 +3,3 @@ streamlit-option-menu
 crewai
 duckduckgo-search
 litellm
-playsound
