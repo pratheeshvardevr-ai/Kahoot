@@ -198,6 +198,7 @@ elif selected == "play":
                 elif chosen_letter == q_data["answer"]:
                     st.success(f"🎉 Correct! Option {chosen_letter} is right.")
                     st.balloons()
+                    playsound("ttsmaker-file-2026-10-15-8-50-2.mp3")
                 else:
                     st.error(f"❌ Incorrect. The correct answer was option {q_data['answer']}.")
             
