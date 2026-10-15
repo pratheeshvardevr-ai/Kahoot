@@ -201,5 +201,6 @@ elif selected == "play":
                     playsound("ttsmaker-file-2026-10-15-8-50-2.mp3")
                 else:
                     st.error(f"❌ Incorrect. The correct answer was option {q_data['answer']}.")
+                    playsound("ttsmaker-file-2026-10-15-9-2-15.mp3")
             
             st.markdown("---")
